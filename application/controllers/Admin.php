@@ -252,6 +252,24 @@ class Admin extends CI_Controller {
         $this->load->view('layout/backend/wrapper', $data);
    }
 
+   function messages(){
+        $data = array(
+                        'title'     => 'Messages Dashboard',
+                        'isi'       => 'backend/dashboard/messages',
+                        'label'     => 'Messages Page',
+                        'label2'    => 'Incoming Messages',
+                        'konten'    =>  $this->Model_admin->get_data('messages'),
+                        'th_menu1'  => 'NO',
+                        'th_menu2'  => 'Name',
+                        'th_menu3'  => 'Email',
+                        'th_menu4'  => 'Subject',
+                        'th_menu5'  => 'Messages',
+                        'th_menu6'  => 'Date'
+                       
+                    );
+        $this->load->view('layout/backend/wrapper', $data);
+   }
+
 }
 
 /* End of file Admin.php */
