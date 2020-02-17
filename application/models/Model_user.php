@@ -83,13 +83,10 @@ class Model_user extends CI_Model
 	}
 
 	public function Mkontak($key){
-		$sql="insert into messages (name, email, subject, message) values(?,?,?,?);";
-		$this->db->query($sql, array($key['name'], $key['email'], $key['subject'], $key['message']));
+		$sql="insert into messages (name, email, subject, message, date_create) values(?,?,?,?,?);";
+		$this->db->query($sql, array($key['name'], $key['email'], $key['subject'], $key['message'], date('Y-m-d')));
 		return $this->db->affected_rows();
 	}
 
-	// public function insert($data) {
-	// 	$this->db->insert('messages', $data);
-	// }
 }
 ?>
