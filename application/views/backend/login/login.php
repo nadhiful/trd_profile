@@ -25,7 +25,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?php echo site_url('Admin/login'); ?>"><b>Dashboard Login</a>
+    <a href="<?php echo site_url('En'); ?>"><b>Dashboard Login</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -56,7 +56,7 @@
             }?>
       </div>
      
-      <?=form_open('Admin/check_user'); ?>
+      <?=form_open('En/check_user'); ?>
 
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Username" name="username" required>

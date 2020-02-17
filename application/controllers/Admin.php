@@ -6,68 +6,18 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Model_admin');
+        if($this->session->userdata('login_status') != TRUE )
+        {
+            $this->session->set_flashdata('notif','HARAP LOGIN TERLEBIH DAHULU!');
+            redirect('');                        
+        };
 	}
-
-	public function index()
-	{
-		
-	}
-
-//=====================Panel Untuk Routing Login===============================================//
-	function login()
-	{
-		$data = array(
-						'title'		=> 'Halaman Login',
-					 );
-		$this->load->view('backend/login/login',$data);
-	}
-
-	function check_user()
-	{
-			$this->form_validation->set_rules(
-				'username', 'Username', 'trim|required'
-			);
-			$this->form_validation->set_rules(
-				'password', 'Password', 
-				'trim|required|min_length[2]|max_length[8]'
-				);
-		if($this->form_validation->run() == FALSE) {
-			$this->load->view('backend/login/login');
-			} else {
-				$valid = $this->Model_admin->check_user();
-				if ($valid == FALSE)
-				{
-					$this->session->set_flashdata('notif','Password atau Username Salah');
-				redirect('Admin/login');
-				} else {
-					$array = array(
-						'id'			=> $valid->id,
-						'id_role' 		=> $valid->namaUser,
-						'nama'	   		=> $valid->levelUser,
-					);
-					//echo "string";
-					$this->session->set_userdata($array);
-					redirect('Admin/dashboard');
-				}
-			}
-
-	}
-	function logout() {
-        $this->session->unset_userdata('id');
-        $this->session->unset_userdata('id_role');
-        $this->session->unset_userdata('nama');
-        $this->session->unset_userdata('password');
-        $this->session->unset_userdata('login_status');
-        $this->session->sess_destroy();
-        $this->session->set_flashdata('notif','THANK YOU FOR LOGIN IN THIS APP');
-        redirect('Admin/login');
-    }
- //=====================Panel Untuk Routing Login===============================================//
 
 //=====================Panel Untuk Routing Profil===============================================//
     function dashboard()
     {
     	$data = array(
+                        
     					'title' 	=> 'Dashboard Page',
     					'isi' 		=> 'backend/dashboard/dashboard',
     					'label'		=> 'Dashboard'
