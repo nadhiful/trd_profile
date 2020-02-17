@@ -121,7 +121,7 @@
                 </a>
               </li>
               <li class="nav-item" id="messages">
-                <a href="<?php echo site_url('Admin/pesan') ?>" class="nav-link">
+                <a href="<?php echo site_url('Admin/messages') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pesan</p>
                 </a>
