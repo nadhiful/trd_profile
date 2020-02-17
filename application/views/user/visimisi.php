@@ -65,7 +65,7 @@
 	<!-- Header section end  -->
 	
 	<!-- Page top section  -->
-	<section class="page-top-section set-bg" data-setbg="<?php site_url();?>../assets/user/img/page-top-bg/3.jpg">
+	<section class="page-top-section set-bg" data-setbg="<?php site_url();?>../assets/user/img/page-top-bg/dm.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7">
@@ -134,14 +134,14 @@
 				<div class="col-lg-8 col-md-6">
 					<div class="footer-widget about-widget">
 						<img src="<?php site_url();?>../assets/user/img/download.png" width="110px" heigh="110px" align="left"><br>
-						<h2 style="color: #DAA520; font-family: Calibri">PT TRI RATNA DIESEL</h2>
-						<h4 style="color: white; font-family: Calibri; margin-left: 5cm;">I N D O N E S I A </h4>
+						<h2 style="color: #DAA520; font-family: Segoe UI Black">PT TRI RATNA DIESEL</h2>
+						<h4 style="color: white; font-family: Segoe UI Black; margin-left: 6cm;">I N D O N E S I A </h4>
 					</div>
-					<div class="footer-social">
-							<a href="https://www.facebook.com/triratnadieselindonesia/"><i class="fa fa-facebook"></i></a>
-							<a href="https://www.instagram.com/triratnadiesel/"><i class="fa fa-instagram"></i></a>
-							<a href=""><i class="fa fa-dribbble"></i></a>
-							<a href="https://www.youtube.com/channel/UClgr02PamnphOU2YYUOhKJQ"><i class="fa fa-youtube"></i></a>
+					<div class="footer-social" style="margin-left: 5cm;">
+							<a href="https://www.facebook.com/triratnadieselindonesia/"><i class="fa fa-facebook"></i></a>&ensp;
+							<a href="https://www.instagram.com/triratnadiesel/"><i class="fa fa-instagram"></i></a>&ensp;
+							<a href=""><i class="fa fa-dribbble"></i></a>&ensp;
+							<a href="https://www.youtube.com/channel/UClgr02PamnphOU2YYUOhKJQ"><i class="fa fa-youtube"></i></a>&ensp;
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-7">

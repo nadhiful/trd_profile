@@ -125,6 +125,16 @@ class Model_admin extends CI_Model {
 			}else{
 				return array();
 			}
+		}elseif ($trigger == "messages") {
+			$hasil = $this->db->select('*')
+							  ->from('messages')
+							  ->order_by('id', 'DESC')
+							  ->get();
+			if ($hasil->num_rows() > 0) {
+				return $hasil->result();
+			}else {
+				return array();
+			}
 		}
 	}
 //============Modul Get Data By ID================================//
@@ -1010,6 +1020,15 @@ class Model_admin extends CI_Model {
 		$this->db->where('id_user',$id)
 				 ->delete('user');
 		redirect('Admin/manage_user','refresh');
+	}
+
+	function update_messages($trigger,$id)
+	{
+		if($trigger == "messages") {
+			$sql="UPDATE messages SET status = 1 WHERE id = ? ";
+			$query=$this->db->query($sql, array($id));
+			redirect('Admin/messages');
+		}
 	}
 
 

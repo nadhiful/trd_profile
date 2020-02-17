@@ -3,42 +3,28 @@
 <head>
 	<title>Kontak | PT Tri Ratna Diesel Indonesia</title>
 	<meta charset="UTF-8">
-<<<<<<< HEAD
 	<!-- Favicon -->
 	<link href="<?php site_url();?>../assets/user/img/download.png" rel="shortcut icon"/>
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
-=======
-	
 	<!-- Favicon -->
 	<link href="<?php site_url();?>../assets/user/img/download.png" rel="shortcut icon"/>
-
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
-
->>>>>>> fronendxi
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?php site_url();?>../assets/user/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="<?php site_url();?>../assets/user/css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="<?php site_url();?>../assets/user/css/slicknav.min.css"/>
 	<link rel="stylesheet" href="<?php site_url();?>../assets/user/css/owl.carousel.min.css"/>
-<<<<<<< HEAD
-=======
-
->>>>>>> fronendxi
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="<?php site_url();?>../assets/user/css/style.css"/>
 
 </head>
 <body>
-<<<<<<< HEAD
-=======
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
->>>>>>> fronendxi
 	<!-- Header section  -->
 	<header class="header-section clearfix">
 		<div class="site-navbar">
@@ -89,7 +75,7 @@
 	<!-- Header section end  -->
 	
 	<!-- Page top section  -->
-	<section class="page-top-section set-bg" data-setbg="<?php site_url();?>../assets/user/img/page-top-bg/4.jpg">
+	<section class="page-top-section set-bg" data-setbg="<?php site_url();?>../assets/user/img/page-top-bg/dm.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7">
@@ -118,14 +104,14 @@
 				<div class="col-lg-8 col-md-6">
 					<div class="footer-widget about-widget">
 						<img src="<?php site_url();?>../assets/user/img/download.png" width="110px" heigh="110px" align="left"><br>
-						<h2 style="color: #DAA520; font-family: Calibri">PT TRI RATNA DIESEL</h2>
-						<h4 style="color: white; font-family: Calibri; margin-left: 5cm;">I N D O N E S I A </h4>
+						<h2 style="color: #DAA520; font-family: Segoe UI Black">PT TRI RATNA DIESEL</h2>
+						<h4 style="color: white; font-family: Segoe UI Black; margin-left: 6cm;">I N D O N E S I A </h4>
 
 						<br><br>
-						<div class="footer-social">
-							<a href="https://www.facebook.com/triratnadieselindonesia/"><i class="fa fa-facebook"></i></a>
-							<a href="https://www.instagram.com/triratnadiesel/"><i class="fa fa-instagram"></i></a>
-							<a href=""><i class="fa fa-dribbble"></i></a>
+						<div class="footer-social" style="margin-left: 5cm;">
+							<a href="https://www.facebook.com/triratnadieselindonesia/"><i class="fa fa-facebook"></i></a>&ensp;
+							<a href="https://www.instagram.com/triratnadiesel/"><i class="fa fa-instagram"></i></a>&ensp;
+							<a href=""><i class="fa fa-dribbble"></i></a>&ensp;
 							<a href="https://www.youtube.com/channel/UClgr02PamnphOU2YYUOhKJQ"><i class="fa fa-youtube"></i></a>
 						</div>
 					</div>
