@@ -3,6 +3,7 @@
 class Model_admin extends CI_Model {
 
 	public $variable;
+	private $_table = 'user';
 
 	public function __construct()
 	{
@@ -12,18 +13,33 @@ class Model_admin extends CI_Model {
 // ============Modul Login=========================================//
 	function check_user()
 	{
-		$username = set_value('username');
-		$password = set_value('password');
-		$hasil = $this->db->where('nama',$username)
-						  ->where('password',$password)
-						  ->limit(1)
-						  ->get('user');
-		if ($hasil->num_rows() > 0) {
-			return $hasil->row();
-		} else {
-			return array();
+		$input  	= $this->input->post('username');		
+		$password 	= $this->input->post('password');
+		$hasil 	= $this->db->where('id_user', $input)
+						   ->or_where('nama',$input)
+						   ->from('user')
+						   ->limit(1)
+				 		   ->get();
+		if ($hasil->num_rows () > 0) {
+
+			foreach ($hasil->result() as $key) {
+				$getPassword = $key->password;
+				$id = $key->id_user;
+			}
+			$isPassword = password_verify($password, $getPassword);
+			if ($isPassword) {
+				$this->_updateLastLogin($id);
+				return $hasil->result();
+				return true;
+			}
 		}
+		return false;
 	}
+
+	 private function _updateLastLogin($id){
+        $sql = "UPDATE {$this->_table} SET last_login=now() WHERE id_user='{$id}'";
+        $this->db->query($sql);
+    }
 //============Modul Get Data All==================================//
 	function get_data($trigger)
 	{

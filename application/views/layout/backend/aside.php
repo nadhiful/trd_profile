@@ -1,4 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <?php 
+  $kunci = $this->session->userdata('id_role');
+  ?>
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="<?php echo base_url('assets/backend/img/AdminLTELogo.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -31,7 +34,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview" id="profile_main">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -39,20 +42,20 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview" id="profile_a">
               <li class="nav-item">
                 <a href="<?php echo site_url('Admin/profile') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compose Profile</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="profile_b">
                 <a href="<?php echo site_url('Admin/vision') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Visi Perusahaan</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="profile_c">
                 <a href="<?php echo site_url('Admin/mission') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Misi Perusahaan</p>
@@ -61,7 +64,7 @@
             </ul>
           </li>
           
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview" id="unit_main">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
@@ -70,19 +73,19 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              <li class="nav-item" id="dm_unit">
                 <a href="<?php echo site_url('Admin/diesel') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>DM(Diesel Manufacture)</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="sm_unit">
                 <a href="<?php echo site_url('Admin/marine') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>SM(Santosa Marine)</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="mc_unit">
                 <a href="<?php echo site_url('Admin/machine') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>MC(Machining Center)</p>
@@ -90,7 +93,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview" id="extended_main">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
@@ -98,26 +101,26 @@
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview" id="karir">
               <li class="nav-item">
                 <a href="<?php echo site_url('Admin/career') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Karir</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="event">
                 <a href="<?php echo site_url('Admin/event') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Event</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="user">
                 <a href="<?php echo site_url('Admin/manage_user') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Management User</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="messages">
                 <a href="<?php echo site_url('Admin/pesan') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pesan</p>
@@ -131,3 +134,27 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+
+  <script>
+    var kunci = '<?php echo $kunci ?>';
+    if (kunci == "HRO") {
+       document.getElementById("profile_main").style.display = "none";
+       document.getElementById("unit_main").style.display = "none";
+       document.getElementById("user").style.display = "none";
+    }else if(kunci == "DMO"){
+      document.getElementById("profile_main").style.display = "none";
+      document.getElementById("sm_unit").style.display = "none";
+      document.getElementById("mc_unit").style.display = "none";
+      document.getElementById("extended_main").style.display = "none";
+    }else if(kunci == "SMO"){
+      document.getElementById("profile_main").style.display = "none";
+      document.getElementById("dm_unit").style.display = "none";
+      document.getElementById("mc_unit").style.display = "none";
+      document.getElementById("extended_main").style.display = "none";
+    }else if(kunci == "MCO"){
+      document.getElementById("profile_main").style.display = "none";
+      document.getElementById("sm_unit").style.display = "none";
+      document.getElementById("dm_unit").style.display = "none";
+      document.getElementById("extended_main").style.display = "none";
+    }
+  </script>
