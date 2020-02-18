@@ -18,9 +18,12 @@ class Admin extends CI_Controller {
     {
     	$data = array(
                         
-    					'title' 	=> 'Dashboard Page',
-    					'isi' 		=> 'backend/dashboard/dashboard',
-    					'label'		=> 'Dashboard'
+    					'title' 	  => 'Dashboard Page',
+    					'isi' 		  => 'backend/dashboard/dashboard',
+    					'label'		  => 'Dashboard',
+                        'count_post'  => 'Nihil',
+                        'count_user'  => 'Nihil',
+                        'count_pesan' => 'Nihil',
 
     				);
     	$this->load->view('layout/backend/wrapper', $data);
